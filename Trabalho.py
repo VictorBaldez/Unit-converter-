@@ -3,6 +3,8 @@ import time
 # Variaves
 espace = ' '
 # Funções
+def units():
+  print(f'Qual a unidade de comprimento que será convertida?\n(1)Metro{espace * 10}(4)Polegada\n(2)Centíemtro{espace * 5}(5)Milha\n(3)pé')
 # Unidades fundamentais
 def fund_selector ():
   time.sleep(2)
@@ -26,13 +28,11 @@ def deri_selector ():
   print(f'(1)Volume{espace*5}(4)Energia\n(2)Força{espace*6}(5)Potência\n(3)Pressão')
 #Comprimento
 def comprimento ():
-  print(f'Qual a unidade de comprimento que será convertida?\n(1)Metro{espace*10}(4)Polegada'
-        f'\n(2)Centíemtro{espace*5}(5)Milha\n(3)pé')
-  unit_class = str(input())
+  units()
+  unit_class = int(input())
   print('Para qual unidade deseja converter?')
-  print(f'Para qual unidade de comprimento deseja converter?\n(1)Metro{espace*10}(4)Polegada'
-        f'\n(2)Centímetro{espace*5}(5)Milha\n(3)pé')
-  unit_class_2 = str(input())
+  units()
+  unit_class_2 = int(input())
   if unit_class == unit_class_2:
     time.sleep(0.5)
     print('\nSelecione uma unidade diferente da atual')
@@ -49,8 +49,47 @@ def comprimento ():
   elif unit_class == 1 and unit_class_2 == 4:
     print('Insira o valorda unidade:')
     value = float(input())
-    print(f'O valor é de {value*39,37}in')
-
+    print(f'O valor é de {value*39.37} in')
+  elif unit_class == 1 and unit_class_2 == 5:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/1609} mi')
+  elif unit_class == 2 and unit_class_2 == 1:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/100}')
+  elif unit_class == 2 and unit_class_2 == 1:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/100} m')
+  elif unit_class == 2 and unit_class_2 == 3:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/30,48} ft')
+  elif unit_class == 2 and unit_class_2 == 4:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/2.54} in')
+  elif unit_class == 2 and unit_class_2 == 5:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/160934} mi')
+  elif unit_class == 3 and unit_class_2 == 1:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value/3.281} m')
+  elif unit_class == 3 and unit_class_2 == 2:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value} cm')
+  elif unit_class == 3 and unit_class_2 == 4:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value} in')
+  elif unit_class == 3 and unit_class_2 == 5:
+    print('Insira o valorda unidade:')
+    value = float(input())
+    print(f'O valor é de {value} mi')
 # Home Page
 print('Olá, seja bem-vindo ao programa de conversão de unidades.')
 def interaction():
@@ -78,4 +117,3 @@ def selection_menu ():
   if unit == 3:
     (deri_selector())
 selection_menu()
-
